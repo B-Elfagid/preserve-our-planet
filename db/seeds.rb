@@ -1,3 +1,4 @@
+
 betty = User.create(username: "betty", email: betty@gmail.com, password: "password", seed_phrase: "patty")
 martha = User.create(username: "martha", email: martha@yahoo.com, password: "password!", seed_phrase: "heye")
 melat = User.create(username: "melat", email: melat@email.com, password: "password!!", seed_phrase: "cali")
