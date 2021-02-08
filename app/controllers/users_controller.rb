@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 
 
   # GET: /users/new
-  get "/signup/new" do
+  get "/signup" do
     erb :"/users/signup.html"
   end
 
   # POST: /users
   post "/signup" do
-    redirect "/users"
+    binding.pry
   end
 
   # GET: /users/5
@@ -30,4 +30,4 @@ class UsersController < ApplicationController
   # delete "/users/:id/delete" do
   # redirect "/users"
   # end
-# end
+ end
