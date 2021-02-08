@@ -8,8 +8,17 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/signup" do
-    binding.pry
+    user = User.create(params["user"])
+    if user.valid?
+      flash[:success] = "You have sucessfully created your profile"
+      session["user_id"] = user.id
+      redirect '/actions'
+    else
+      flash[:error] = user.errors.full_messages.first
+      redirect '/signup'
+    end 
   end
+
 
   # GET: /users/5
   # get "/users/:id" do

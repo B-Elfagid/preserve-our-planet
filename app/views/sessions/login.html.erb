@@ -1,4 +1,5 @@
 
+ 
 <% if flash[:error] %>
 <div class="errors flash fatal">
    <h3 class="error"><%= flash[:error] %>
@@ -6,15 +7,11 @@
    <% end %>
 
 
-<h1>Signup</h1>
+<h1>Login</h1>
 <div class="form-container">
-  <form method="POST" action="/signup">
-      <div class="form-group">
-        <lable for="username">Username</lable>
-        <input type="text" name="user[username]" id="username" class="form-control" required>
-      </div>
-
-      <div class="form-group">
+  <form method="POST" action="/login">
+     
+     <div class="form-group">
         <lable for="email">Email</lable>
         <input type="email" name="user[email]" id="email" class="form-control" required>
       </div>
@@ -24,12 +21,8 @@
         <input type="password" name="user[password]" id="password" class="form-control" required>
       </div>
       
-      <div class="form-group">
-        <lable for="password-confirmation">Password Confirmation</lable>
-        <input type="password" name="user[password_confirmation]" id="password-confirmation" class="form-control" required>
-      </div>
 
-        <input type="submit" value="Signup">
+        <input type="submit" value="Login">
         <br><br><br>
         <small>**We do not share your personal information you have provided to us without your consent!**</small>
   </form>
