@@ -33,8 +33,7 @@ class ApplicationController < Sinatra::Base
     if current_user != obj.user
       flash[:error] = "You do not have permission to acess the page!"
         redirect '/actions'
- end 
-end 
-
-
+     end 
+  end 
+ end  
 end
