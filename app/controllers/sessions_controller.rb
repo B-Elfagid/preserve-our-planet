@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   # GET: /sessions
   get "/login" do
+    redirect "/actions" if logged_in?
     erb :"/sessions/login.html"
   end
 
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
   post "/login" do
     user = User.find_by_email(params["user"]["email"])
     if user && user.authenticate(params["user"]["password"])
+      session["user_id"] = user.id
       flash[:message] = "Successfully logged-in"
       redirect "/actions"
     else
