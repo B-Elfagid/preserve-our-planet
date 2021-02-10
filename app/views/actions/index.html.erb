@@ -4,7 +4,7 @@
    <h1>List of Users Actions</h1>
     <ul>
      <% @actions.each do |a| %>
-       <li><%= a.id %> - <%= a.name %>, <%= a.title %></li>
+       <a href="/actions/<%= a.id%>"><%= a.id %> - <%= a.name %>/<%= a.title %></a><br>
     <% end %>
     </ul>
 
