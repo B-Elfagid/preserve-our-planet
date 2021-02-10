@@ -1,3 +1,11 @@
+
+<% if flash[:error] %>
+<div class="errors flash fatal">
+   <h3 class="error"><%= flash[:error] %>
+   </div>
+   <% end %>
+   
+<div class="form-container">
 <h1>What have you done today to prevent our planet?</h1>
     <h2>Please fill the form</h2>
 
@@ -21,6 +29,7 @@
     <input type="submit" value="Submit">
 
     </form>
+    </div>
 
 
     

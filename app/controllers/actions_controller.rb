@@ -25,7 +25,7 @@ class ActionsController < ApplicationController
     if @action.save
     redirect "/actions/#{@action.id}"
     else
-      flash[:error] = "you must fill in all of the fields."
+      flash[:error] = @action.errors.full_messages.to_sentence
       redirect "/actions/new"
   end
 end 
