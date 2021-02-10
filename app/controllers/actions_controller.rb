@@ -6,22 +6,29 @@ class ActionsController < ApplicationController
     @actions = Action.all.includes(:user).order(:title)
     erb :"/actions/index.html"
   end
+  
+  # GET: /actions/new
+  get "/actions/new" do
+    erb :"/actions/new.html"
+  end
 
   # GET: /actions/5
   get "/actions/:id" do
     @action = Action.find(params["id"])
     erb :"/actions/show.html"
   end
-
-  # GET: /actions/new
-  get "/actions/new" do
-    erb :"/actions/new.html"
-  end
+  
 
   # POST: /actions
   post "/actions" do
-    redirect "/actions"
+    @action = Action.new(params["action"])
+    if @action.save
+    redirect "/actions/#{@action.id}"
+    else
+      flash[:error] = "you must fill in all of the fields."
+      redirect "/actions/new"
   end
+end 
 
 
   # GET: /actions/5/edit
