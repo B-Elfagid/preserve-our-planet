@@ -12,13 +12,13 @@ class ActionsController < ApplicationController
     erb :"/actions/new.html"
   end
 
+  
   # GET: /actions/5
   get "/actions/:id" do
     @action = Action.find(params["id"])
     erb :"/actions/show.html"
   end
   
-
   # POST: /actions
   post "/actions" do
     @action = Action.new(params["action"])
@@ -30,23 +30,39 @@ class ActionsController < ApplicationController
   end
 end 
 
-
   # GET: /actions/5/edit
   get "/actions/:id/edit" do
     @action = Action.find(params["id"])
-    erb :"/actions/edit.html"
+    erb :"actions/edit.html"
   end
 
+  
   # PATCH: /actions/5
   patch "/actions/:id" do
-    @action = Action.new(params["action"])
-    if @action.save
+    @action = Action.find(params["id"])
+     if @action.update(params["action"])
+    redirect "/actions/#{@action.id}"
+     else
+    redirect "/actions/#{@action.id}/edit.html"
+  end
+end 
+
+
+# DELETE: /actions/5/delete
+delete "/actions/:id/delete" do
+  @action = Action.find(params["id"])
+  if @action.destroy
+   redirect "/actions"
+  else
     redirect "/actions/#{@action.id}"
   end
-
-  # DELETE: /actions/5/delete
-  delete "/actions/:id/delete" do
-    redirect "/actions"
-  end
-end
 end 
+end 
+
+
+
+
+  
+
+
+

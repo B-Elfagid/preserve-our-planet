@@ -12,7 +12,8 @@
     <h2>Please fill the form</h2>
 
     <form action="/actions/<%= @action.id %>" method="POST" >
-     
+    <input id="hidden" type="hidden" name="_method" value="patch">
+   
     <div class="mb-1 row">
         <div class="col-md-1">
             <label for="name">Name</label>
@@ -59,7 +60,7 @@
       </div>
   
     
-    <input type="submit" value="Submit" class="btn btn-success"/ >
+    <input type="submit" class="btn btn-success" value="Update"/ >
 
     </form>
     </div>
