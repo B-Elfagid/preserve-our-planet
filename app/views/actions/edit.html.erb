@@ -1,1 +1,70 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Action:</h1>
+
+
+<% if flash[:error] %>
+<div class="errors flash fatal">
+   <h3 class="error"><%= flash[:error] %>
+   </div>
+   <% end %>
+   
+<div class="form-container">
+<h1>What have you done today to prevent our planet?</h1>
+    <h2>Please fill the form</h2>
+
+    <form action="/actions/<%= @action.id %>" method="POST" >
+     
+    <div class="mb-1 row">
+        <div class="col-md-1">
+            <label for="name">Name</label>
+         </div>
+         <div class="col-md-1">
+            <input type="text" name="action[name]" id="name" required><br>
+         </div>
+    </div>
+
+    <div class="mb-1 row">
+        <div class="col-md-1">
+            <label for="title">Title</label>
+         </div>
+         <div class="col-md-1">
+            <input type="text" name="action[title]" id="title" required><br>
+         </div>
+    </div>
+
+    <div class="mb-1 row">
+        <div class="col-md-1">
+           <label for="description">Description</label>
+         </div>
+         <div class="col-md-1">
+            <input type="text" name="action[description]" id="description" required><br>
+         </div>
+    </div>
+   
+    <div class="mb-1 row">
+         <div class="col-md-1">
+            <label for="fact">Fact</label>
+         </div>
+         <div class="col-md-1">
+            <input type="text" name="action[fact]" id="fact" required><br>
+         </div>
+    </div>
+    
+    <div class="mb-1 row">
+         <div class="col-md-1">
+            <label for="image">Image</label>
+         </div>
+         <div class="col-md-1">
+            <input type="file" name="action[image]" id="image"><br>
+         </div>
+      </div>
+  
+    
+    <input type="submit" value="Submit" class="btn btn-success"/ >
+
+    </form>
+    </div>
+
+
+    
+    
+   
