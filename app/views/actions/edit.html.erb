@@ -18,7 +18,7 @@
             <label for="name">Name</label>
          </div>
          <div class="col-md-1">
-            <input type="text" name="action[name]" id="name" required><br>
+            <input type="text" name="action[name]" id="name" value="<%= @action.name %>" required><br>
          </div>
     </div>
 
@@ -27,7 +27,7 @@
             <label for="title">Title</label>
          </div>
          <div class="col-md-1">
-            <input type="text" name="action[title]" id="title" required><br>
+            <input type="text" name="action[title]" id="title" value="<%= @action.title %>" required><br>
          </div>
     </div>
 
@@ -36,7 +36,7 @@
            <label for="description">Description</label>
          </div>
          <div class="col-md-1">
-            <input type="text" name="action[description]" id="description" required><br>
+            <input type="text" name="action[description]" id="description" value="<%= @action.description %>" required><br>
          </div>
     </div>
    
@@ -45,7 +45,7 @@
             <label for="fact">Fact</label>
          </div>
          <div class="col-md-1">
-            <input type="text" name="action[fact]" id="fact" required><br>
+            <input type="text" name="action[fact]" id="fact" value="<%= @action.fact %>" required><br>
          </div>
     </div>
     
@@ -54,7 +54,7 @@
             <label for="image">Image</label>
          </div>
          <div class="col-md-1">
-            <input type="file" name="action[image]" id="image"><br>
+            <input type="file" name="action[image]" id="image" value="<%= @action.image %>"><br>
          </div>
       </div>
   
