@@ -21,11 +21,12 @@ class ActionsController < ApplicationController
   
   # POST: /actions
   post "/actions" do
-    @action = Action.new(params["action"])
-    if @action.save
-    redirect "/actions/#{@action.id}"
+    action = Action.create(params["action"])
+    if action.valid?
+      flash[:success] = "sucessfuly created"
+    redirect "/actions"
     else
-      flash[:error] = @action.errors.full_messages.to_sentence
+      flash[:error] = action.errors.full_messages.to_sentence
       redirect "/actions/new"
   end
 end 
