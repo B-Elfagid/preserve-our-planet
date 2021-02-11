@@ -3,7 +3,7 @@ class ActionsController < ApplicationController
   # GET: /actions
   get "/actions" do
     redirect_if_not_logged_in
-    @actions = Action.all.includes(:user).order(:title)
+    @actions = Action.all.includes(:user).order(:username)
     erb :"/actions/index.html"
   end
   
@@ -33,12 +33,15 @@ end
 
   # GET: /actions/5/edit
   get "/actions/:id/edit" do
+    @action = Action.find(params["id"])
     erb :"/actions/edit.html"
   end
 
   # PATCH: /actions/5
   patch "/actions/:id" do
-    redirect "/actions/:id"
+    @action = Action.new(params["action"])
+    if @action.save
+    redirect "/actions/#{@action.id}"
   end
 
   # DELETE: /actions/5/delete
@@ -46,3 +49,4 @@ end
     redirect "/actions"
   end
 end
+end 

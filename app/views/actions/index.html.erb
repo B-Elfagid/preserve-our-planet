@@ -1,12 +1,15 @@
 <h3>Welcome, Thank you for participating to prevent our planet!</h3>
 
-
+  <div class="actions-container">
+ 
    <h1>Your Daily Actions</h1>
     <ul>
      <% @actions.each do |a| %>
-       <a href="/actions/<%= a.id%>"><%= a.id %> - <%= a.name %>/<%= a.title %></a><br>
+       <a href="/actions/<%= a.id%>"> Username:<%= a.user.try(:username) || "N/A" %> - Action name: <%= a.name %> - Action title: <%= a.title %></a><br>
     <% end %>
     </ul>
+    
+    </div>
 
 
  
