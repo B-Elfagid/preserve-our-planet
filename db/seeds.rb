@@ -12,9 +12,6 @@ plan = Action.create(name: "planting", title: "tree planting", description: "pla
 walk = Action.create(name: "walking", title: "let us walk to protect environment", description: "walking to work instead of using a car", image: nil, 
        fact: "walking over other modes of transportation (such as a car), we reduce the number of harmful emissions created and released into the atmosphere.", user: melat)
     
-SavedAction.create(user: betty, action: recy)
-SavedAction.create(user: martha, action: plan)
-SavedAction.create(user: melat, action: walk)
 
 
 

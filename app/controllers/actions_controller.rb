@@ -12,7 +12,6 @@ class ActionsController < ApplicationController
     erb :"/actions/new.html"
   end
 
-  
   # GET: /actions/5
   get "/actions/:id" do
     @action = Action.find(params["id"])
@@ -24,12 +23,12 @@ class ActionsController < ApplicationController
     action = Action.create(params["action"])
     if action.valid?
       flash[:success] = "sucessfuly created"
-    redirect "/actions"
+      redirect "/actions"
     else
       flash[:error] = action.errors.full_messages.to_sentence
       redirect "/actions/new"
-  end
-end 
+    end
+  end 
 
 
   # GET: /actions/5/edit
@@ -41,17 +40,14 @@ end
   
   # PATCH: /actions/5
   patch "/actions/:id" do
-   @action = Action.find(params["id"])
-   @action.name = params[:name]
-   @action.title = params[:title]
-   @action.description = params[:description]
-   @action.fact = params[:fact]
-   @action.image = params[:image]
-   @action.save
-   redirect "/actions/#{@action.id}"
-  end
-
-
+    @action = Action.find(params["id"])
+   if @action.update(params["action"])
+    redirect "/actions/#{@action.id}"
+  else
+    flash[:error] = action.errors.full_messages.to_sentence
+    redirect "/actions/#{@action.id}/edit"
+  end 
+end 
 
 # DELETE: /actions/5/delete
 delete "/actions/:id/delete" do
