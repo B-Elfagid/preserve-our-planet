@@ -5,10 +5,15 @@ get "/about" do
   erb :"users/about.html"
 end
 
+get "/news" do
+  erb :"users/news.html"
+end
+
 get "/users" do
   @users = User.all
   erb :"/users/index.html"
 end
+
   # GET: /users/5
   # get "/users/:id" do
   #  erb :"/users/show.html"
@@ -29,3 +34,4 @@ end
   # redirect "/users"
   # end
  end
+
