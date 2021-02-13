@@ -1,5 +1,23 @@
 class SessionsController < ApplicationController
 
+    # GET: /users/new
+    get "/signup" do
+      erb :"/sessions/signup.html"
+    end
+  
+    # POST: /users
+    post "/signup" do
+      user = User.create(params["user"])
+      if user.valid?
+        flash[:success] = "You have sucessfully created your profile"
+        session["user_id"] = user.id
+        redirect '/actions'
+      else
+        flash[:error] = user.errors.full_messages.first
+        redirect '/signup'
+      end 
+    end
+
   # GET: /sessions
   get "/login" do
     redirect "/actions" if logged_in?

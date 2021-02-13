@@ -31,6 +31,7 @@ class ActionsController < ApplicationController
   end
 end 
 
+
   # GET: /actions/5/edit
   get "/actions/:id/edit" do
     @action = Action.find(params["id"])
@@ -41,13 +42,15 @@ end
   # PATCH: /actions/5
   patch "/actions/:id" do
    @action = Action.find(params["id"])
-   
-     if @action.update(params["action"])
-    redirect "/actions/#{@action.id}"
-     else
-    redirect "/actions/#{@action.id}/edit.html"
+   @action.name = params[:name]
+   @action.title = params[:title]
+   @action.description = params[:description]
+   @action.fact = params[:fact]
+   @action.image = params[:image]
+   @action.save
+   redirect "/actions/#{@action.id}"
   end
-end 
+
 
 
 # DELETE: /actions/5/delete

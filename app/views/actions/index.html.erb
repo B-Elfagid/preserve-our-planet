@@ -7,7 +7,7 @@
      <% @actions.each do |a| %>
       <li>
        <a href="/actions/<%= a.id%>"> Username:<%= a.user.try(:username) || "N/A" %> - Action name: <%= a.name %> - Action title: <%= a.title %></a><br>
-    </li>
+         </li>
     <% end %>
     </ul>
     
