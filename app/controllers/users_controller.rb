@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET: /users/new
   get "/signup" do
-    erb :"/users/signup.html"
+    erb :"/sessions/signup.html"
   end
 
   # POST: /users
@@ -18,6 +18,10 @@ class UsersController < ApplicationController
       redirect '/signup'
     end 
   end
+
+  get "/about" do
+    erb :"users/about.html"
+end
 
 
   # GET: /users/5

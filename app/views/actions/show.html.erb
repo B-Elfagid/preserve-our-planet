@@ -29,6 +29,7 @@
  <div class="mb-1 col-1"> 
    <a href="/actions/<%= @action.id %>/edit" class="btn btn-outline-success">Edit </a>
  </div>
+
  <div class="mb-1 col-6">
     <form action="/actions/<%= @action.id %>/delete" method="POST" >
       <input id="hidden" type="hidden" name="_method" value="delete">  
@@ -37,6 +38,8 @@
 
  </div>
 </div>
+
+
 
 
 

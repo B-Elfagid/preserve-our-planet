@@ -40,7 +40,8 @@ end
   
   # PATCH: /actions/5
   patch "/actions/:id" do
-    @action = Action.find(params["id"])
+   @action = Action.find(params["id"])
+   
      if @action.update(params["action"])
     redirect "/actions/#{@action.id}"
      else
