@@ -13,11 +13,11 @@ html, body {
   }
 
   .navbar-inverse .navbar-nav li a:hover,  .navbar-inverse .navbar-nav li a.active {
-    color: #fff;
+    color: blue;
 
   }
 
-  
+ 
   @media (max-width: 768px) {
     .landing-text h1 {
       font-size: 300%;
@@ -31,3 +31,5 @@ html, body {
       max-width: 100px;
     }
   }
+
+  
