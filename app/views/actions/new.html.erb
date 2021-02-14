@@ -1,13 +1,14 @@
 
 <% if flash[:error] %>
+<body>
 <div class="errors flash fatal">
    <h3 class="error"><%= flash[:error] %>
    </div>
    <% end %>
    
 <div class="form-container">
-<h1>What have you done today to prevent our planet?</h1>
-    <h2>Please fill the form</h2>
+<h4>What have you done today to prevent our planet?</h4>
+    <h5>Please fill the form</h5>
 
     <form action="/actions" method="POST" enctype="multipart/form-data">
      
@@ -57,12 +58,39 @@
       </div>
   
     
-    <input type="submit" value="Submit" class="btn btn-success"/ >
+    <input type="submit" value="Submit" class="btn btn-primary"/ >
 
     </form>
     </div>
+    </body>
+    
+<style>
+    .form-container {
+      background-color: whitesmoke;
+      text-align: left;
+      margin: 0;
+      vertical-align: middle;
+     height :400px;
+     padding: 5px;
+     border-radius: 10px;
+     box-shadow: 0px 0px 10px #000;
+     width: 90%;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 50px;
+     color: #4b5868;
+}
+h4{
+   color: black;
+   font-style: italic;
+   font-weight: bold;
+}
 
-
+h5{
+   color: black;
+   font-style: italic;
+   font-weight: bold;
+}
+    </style>
     
     
-   

@@ -5,9 +5,10 @@
    </div>
    <% end %>
 
+<body>
 
-<h1>Signup</h1>
 <div class="form-container">
+  <h4>Sign up and Join us!</h4>
   <form method="POST" action="/signup">
       <div class="form-group">
         <lable for="username">Username</lable>
@@ -29,9 +30,29 @@
         <input type="password" name="user[password_confirmation]" id="password-confirmation" class="form-control" required>
       </div>
 
-        <input type="submit" class="btn btn-secondary" value="Signup">
+        <input type="submit" class="btn btn-primary" value="Sign up">
         
         <br><br><br>
-        <small>**We do not share your personal information you have provided to us without your consent!**</small>
+        <small> We do not share your personal information you have provided to us without your consent!</small>
+          
   </form>
 </div>
+
+<style>
+
+.form-container {
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  
+
+ 
+
+}
+</style>
+</body>
