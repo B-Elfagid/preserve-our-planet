@@ -1,20 +1,70 @@
-<h3>Welcome, Thank you for participating to prevent our planet!</h3>
+<p>Thank you for participating to protect our planet, see below your daily actions</p>
 
   <div class="actions-container">
  
-   <h1>Your Daily Actions</h1>
-    <ul>
+   <h4>Your Daily Actions</h4>
+    <ul id="buttons">
      <% @actions.each do |a| %>
       <li>
-       <a href="/actions/<%= a.id%>"> - Your Name: <%= a.name %> - Action title: <%= a.title %></a><br>
-         </li>
+       <a href="/actions/<%= a.id%>">  Action Name: <%= a.name %> |  Action title: <%= a.title %></a><br>
+        
     <% end %>
+    </li>
     </ul>
-    
+    <br><br>
+    <h3>
+    <a href="/actions/new" class="btn btn-primary">Create new action</a>
+    </h3>
     </div>
 
   
  
 
-<a href="/logout">Logout</a>
-<a href="/actions/new">Create new action</a>
+<style>
+
+.actions-container {
+  background-color: whitesmoke;
+  padding: 120px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px #000;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  text-padding: 5px;
+  font-size: 20px;
+ 
+}
+
+h4 {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+
+}
+
+h3 {
+  text-align: center;
+ 
+}
+
+p
+{
+  text-align: center;
+}
+
+
+
+#buttons li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+ 
+}
+
+#buttons li a:hover {
+  text-decoration: none;
+  color: #000000;
+  background-color: #D8D8D8;
+}
+</style>

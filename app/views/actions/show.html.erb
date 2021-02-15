@@ -1,45 +1,98 @@
-<div class="mb-1 row justify-content-center">
-     <h2> Daily Action </h2>
+
+ <body>   
+<div class="flex-container">
+<section class="main-content">
+   <h3>Daily Action </h3>
+   <h4>Action Name: <%= @action.name %></h4>
+   <h4>Action Title: <%= @action.title %></h4>
+   <h4>Description: <%= @action.description %></h4>
+   <h4>Fact: <%= @action.fact %></h4>
+   <br>
+   <a href="/actions/<%= @action.id %>/edit" class="btn btn-primary">Edit </a>
+   <form action="/actions/<%= @action.id %>/delete" method="POST" >
+  <input id="hidden" type="hidden" name="_method" value="delete">  
+  <input type="submit" value="Destroy" role="button" class="btn btn-danger">
+</form>
+</section>
+
+
+
+<aside class="sidebar">
+<h3>Share your picture</h3>
+<h3>Image <%= @action.image %></h3>
+</aside>
+
+
+
 </div>
+<body>
 
-<div class="mb-1 row">
-  <div class="col-md-8">
-    <h3>Action Name: <%= @action.name %></h3>
-</div>
-    
-<div class="col-md-8">
-      <h3>Action Title: <%= @action.title %></h3>
-</div>
 
-<div class="col-md-8">
-   <h3>Description: <%= @action.description %></h3>
- </div>
 
- <div class="col-md-8">
-     <h3>Fact: <%= @action.fact %></h3>
- </div>
 
- <div class="col-md-6">
-   
-    <h3>Image <%= @action.image %></h3>
- </div>
-</div>
-
-<div class="buttons row">
- <div class="mb-1 col-1"> 
-   <a href="/actions/<%= @action.id %>/edit" class="btn btn-outline-success">Edit </a>
- </div>
-
- <div class="mb-1 col-6">
-    <form action="/actions/<%= @action.id %>/delete" method="POST" >
-      <input id="hidden" type="hidden" name="_method" value="delete">  
-      <input type="submit" value="Destroy" role="button" class="btn btn-outline-danger">
-    </form>
-
- </div>
-</div>
+ 
 
 
 
 
 
+<style>
+
+.flex-container{
+  display: flex;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px
+}
+
+.main-content {
+  background-color: #F2F2F2;
+  width: 60%;
+  
+ 
+}
+
+.sidebar {
+  background-color: #FAFAFA;
+  width: 35%;
+}
+
+.btn-primary {
+width: 200px;
+height: 40px;
+
+display: flex;
+
+
+}
+.btn-danger {
+width: 200px;
+height: 40px;
+
+display: flex;
+
+}
+
+.btn {
+  font-size: 15px;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+
+}
+h3 {
+  font-family: georgia;
+  text-align: center;
+}
+
+h4{
+ 
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  font-family: georgia;
+}
+
+
+</style>
