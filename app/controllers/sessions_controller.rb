@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       if user.valid?
         flash[:success] = "You have sucessfully created your profile"
         session["user_id"] = user.id
-        redirect '/actions'
+        redirect '/actions/new'
       else
         flash[:error] = user.errors.full_messages.first
         redirect '/signup'
@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
     redirect "/actions" if logged_in?
     erb :"/sessions/login.html"
   end
+
 
   # POST: /sessions
   post "/login" do

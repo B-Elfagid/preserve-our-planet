@@ -5,7 +5,8 @@ class ActionsController < ApplicationController
     redirect_if_not_logged_in
     @actions = Action.all.includes(:user).order(:username)
     erb :"/actions/index.html"
-  end
+    end
+
   
   # GET: /actions/new
   get "/actions/new" do

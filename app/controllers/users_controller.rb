@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 
+
 get "/about" do
   erb :"users/about.html"
 end

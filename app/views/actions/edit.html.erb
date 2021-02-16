@@ -1,4 +1,4 @@
-<h1>Edit Action:</h1>
+
 
 
 <% if flash[:error] %>
@@ -8,64 +8,91 @@
    <% end %>
    
 <div class="form-container">
-<h1>What have you done today to prevent our planet?</h1>
-    <h2>Please fill the form</h2>
+<h3>Edit Action:</h3>
+<h4>What have you done today to prevent our planet?</h4>
+    <h5>Please fill the form</h5>
 
     <form action="/actions/<%= @action.id %>" method="POST" >
     <input id="hidden" type="hidden" name="_method" value="PATCH">
    
     <div class="mb-1 row">
-        <div class="col-md-1">
+        <div class="col-md-2">
             <label for="name">Name</label>
          </div>
-         <div class="col-md-1">
+         <div class="col-md-2">
             <input type="text" name="action[name]" id="name" value="<%= @action.name %>" required><br>
          </div>
     </div>
 
     <div class="mb-1 row">
-        <div class="col-md-1">
+        <div class="col-md-2">
             <label for="title">Title</label>
          </div>
-         <div class="col-md-1">
+         <div class="col-md-2">
             <input type="text" name="action[title]" id="title" value="<%= @action.title %>" required><br>
          </div>
     </div>
 
     <div class="mb-1 row">
-        <div class="col-md-1">
+        <div class="col-md-2">
            <label for="description">Description</label>
          </div>
-         <div class="col-md-1">
+         <div class="col-md-2">
             <input type="text" name="action[description]" id="description" value="<%= @action.description %>" required><br>
          </div>
     </div>
    
     <div class="mb-1 row">
-         <div class="col-md-1">
+         <div class="col-md-2">
             <label for="fact">Fact</label>
          </div>
-         <div class="col-md-1">
+         <div class="col-md-2">
             <input type="text" name="action[fact]" id="fact" value="<%= @action.fact %>" required><br>
          </div>
     </div>
     
     <div class="mb-1 row">
-         <div class="col-md-1">
+         <div class="col-md-2">
             <label for="image">Image</label>
          </div>
-         <div class="col-md-1">
+         <div class="col-md-2">
             <input type="file" name="action[image]" id="image" value="<%= @action.image %>"><br>
          </div>
       </div>
   
-    
+    <h3>
     <input type="submit" class="btn btn-success" value="Update"/ >
-
+    </h3>
     </form>
     </div>
 
 
     
+    <style>
+
+    .form-container {
+      background-color: whitesmoke;
+      text-align: left;
+      vertical-align: middle;
+      height :400px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #000;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 50px;
+   
+    }
+    h3, h4, h5 {
+      text-align: center;
+    }
+    
+    input {
+      resize: horizontal;
+      width: 500px;
+  
+}
+
+    </style>
     
    
