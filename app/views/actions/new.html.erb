@@ -1,75 +1,72 @@
 
 <% if flash[:error] %>
 <body>
-<div class="errors flash fatal">
-   <h3 class="error"><%= flash[:error] %>
+   <div class="errors flash fatal">
+      <h3 class="error"><%= flash[:error] %>
    </div>
    <% end %>
    
-<div class="form-container">
-<h4>What have you done today to prevent our planet?</h4>
-    <h5>Please fill the form</h5>
+   <div class="form-container">
+      <h4>What have you done today to prevent our planet?</h4>
+      <h5>Please fill the form</h5>
 
-    <form action="/actions" method="POST" enctype="multipart/form-data">
+       <form action="/actions" method="POST" enctype="multipart/form-data">
      
-    <div class="mb-1 row">
-        <div class="col-md-1">
-            <label for="name">Name</label>
-         </div>
-         <div class="col-md-1">
-            <input type="text" name="action[name]" id="name" required><br>
-         </div>
-    </div>
+           <div class="mb-1 row">
+              <div class="col-md-1">
+                 <label for="name">Name</label>
+              </div>
+                 <div class="col-md-1">
+                    <input type="text" name="action[name]" id="name" required><br>
+                 </div>
+           </div>
 
-    <div class="mb-1 row">
-        <div class="col-md-1">
-            <label for="title">Title</label>
-         </div>
-         <div class="col-md-1">
-            <input type="text" name="action[title]" id="title" required><br>
-         </div>
-    </div>
+           <div class="mb-1 row">
+              <div class="col-md-1">
+                 <label for="title">Title</label>
+              </div>
+                 <div class="col-md-1">
+                    <input type="text" name="action[title]" id="title" required><br>
+                 </div>
+           </div>
 
-    <div class="mb-1 row">
-        <div class="col-md-1">
-           <label for="description">Description</label>
-         </div>
-         <div class="col-md-1">
-            <input type="text" name="action[description]" id="description" required><br>
-         </div>
-    </div>
+           <div class="mb-1 row">
+              <div class="col-md-1">
+                 <label for="description">Description</label>
+              </div>
+                 <div class="col-md-1">
+                     <input type="text" name="action[description]" id="description" required><br>
+                 </div>
+              </div>
    
-    <div class="mb-1 row">
-         <div class="col-md-1">
-            <label for="fact">Fact</label>
-         </div>
-         <div class="col-md-1">
-            <input type="text" name="action[fact]" id="fact" required><br>
-         </div>
-    </div>
+           <div class="mb-1 row">
+              <div class="col-md-1">
+                 <label for="fact">Fact</label>
+              </div>
+                 <div class="col-md-1">
+                    <input type="text" name="action[fact]" id="fact" required><br>
+                 </div>
+           </div>
     
-    <div class="mb-1 row">
-         <div class="col-md-1">
-            <label for="image">Image</label>
-         </div>
-         <div class="col-md-1">
-            <input type="file" name="action[image]" id="image"><br>
-         </div>
-      </div>
-  
+           <div class="mb-1 row">
+              <div class="col-md-1">
+                 <label for="image">Image</label>
+              </div>
+                 <div class="col-md-1">
+                    <input type="file" name="action[image]" id="image"><br>
+                 </div>
+           </div> 
+              <input type="submit" value="Submit" class="btn btn-primary"/ >
+          </form>
+       </div>
+   </body>
     
-    <input type="submit" value="Submit" class="btn btn-primary"/ >
-
-    </form>
-    </div>
-    </body>
-    
-<style>
+ <style>
     .form-container {
-      background-color: whitesmoke;
-      text-align: left;
-      margin: 0;
-      vertical-align: middle;
+     background-color: whitesmoke;
+     text-align: left;
+     margin: 0;
+     vertical-align: middle;
      height :400px;
      padding: 5px;
      border-radius: 10px;
@@ -79,18 +76,19 @@
      margin-right: auto;
      padding: 50px;
      color: #4b5868;
-}
-h4{
+  }
+  h4{
    color: black;
    font-style: italic;
    font-weight: bold;
-}
+  }
 
-h5{
+  h5{
    color: black;
    font-style: italic;
    font-weight: bold;
-}
-    </style>
+ }
+ 
+</style>
     
     

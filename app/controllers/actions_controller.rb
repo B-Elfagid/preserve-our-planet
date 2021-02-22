@@ -2,10 +2,10 @@ class ActionsController < ApplicationController
 
   # GET: /actions
   get "/actions" do
-    redirect_if_not_logged_in
-    @actions = Action.all.includes(:user).order(:username)
-    erb :"/actions/index.html"
-    end
+     redirect_if_not_logged_in
+     @actions = Action.all.includes(:user).order(:username)
+     erb :"/actions/index.html"
+  end
 
   
   # GET: /actions/new
@@ -42,23 +42,23 @@ class ActionsController < ApplicationController
   # PATCH: /actions/5
   patch "/actions/:id" do
     @action = Action.find(params["id"])
-   if @action.update(params["action"])
-    redirect "/actions/#{@action.id}"
-  else
-    flash[:error] = action.errors.full_messages.to_sentence
-    redirect "/actions/#{@action.id}/edit"
+    if @action.update(params["action"])
+       redirect "/actions/#{@action.id}"
+    else
+       flash[:error] = action.errors.full_messages.to_sentence
+       redirect "/actions/#{@action.id}/edit"
+     end 
   end 
-end 
 
 # DELETE: /actions/5/delete
-delete "/actions/:id/delete" do
-  @action = Action.find(params["id"])
-  if @action.destroy
-   redirect "/actions"
-  else
-    redirect "/actions/#{@action.id}"
-  end
-end 
+  delete "/actions/:id/delete" do
+    @action = Action.find(params["id"])
+    if @action.destroy
+      redirect "/actions"
+    else
+      redirect "/actions/#{@action.id}"
+    end
+  end 
 end 
 
 

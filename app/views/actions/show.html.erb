@@ -1,39 +1,27 @@
 
- <body>   
+<body>   
 <div class="flex-container">
-<section class="main-content">
-   <h3>Daily Action </h3>
-   <h4>Action Name: <%= @action.name %></h4>
-   <h4>Action Title: <%= @action.title %></h4>
-   <h4>Description: <%= @action.description %></h4>
-   <h4>Fact: <%= @action.fact %></h4>
-   <br>
-   <a href="/actions/<%= @action.id %>/edit" class="btn btn-primary">Edit </a>
-   <form action="/actions/<%= @action.id %>/delete" method="POST" >
-  <input id="hidden" type="hidden" name="_method" value="delete">  
-  <input type="submit" value="Destroy" role="button" class="btn btn-danger">
-</form>
-</section>
+   <section class="main-content">
+       <h3>Daily Action </h3>
+          <h4>Action Name: <%= @action.name %></h4>
+          <h4>Action Title: <%= @action.title %></h4>
+          <h4>Description: <%= @action.description %></h4>
+          <h4>Fact: <%= @action.fact %></h4>
+          <br>
+          <a href="/actions/<%= @action.id %>/edit" class="btn btn-primary">Edit </a>
 
+      <form action="/actions/<%= @action.id %>/delete" method="POST" >
+      <input id="hidden" type="hidden" name="_method" value="delete">  
+            <input type="submit" value="Destroy" role="button" class="btn btn-danger">
+      </form>
+  </section>
 
-
-<aside class="sidebar">
-<h3>Share your picture</h3>
-<h3>Image <%= @action.image %></h3>
-</aside>
-
-
-
-</div>
-<body>
-
-
-
-
- 
-
-
-
+         <aside class="sidebar">
+             <h3>Share your picture</h3>
+                <h3>Image <%= @action.image %></h3>
+         </aside>
+      </div>
+  <body>
 
 
 <style>
@@ -48,8 +36,6 @@
 .main-content {
   background-color: #F2F2F2;
   width: 60%;
-  
- 
 }
 
 .sidebar {
@@ -61,14 +47,12 @@
 width: 200px;
 height: 40px;
 display: flex;
-
-
 }
+
 .btn-danger {
 width: 200px;
 height: 40px;
 display: flex;
-
 }
 
 .btn {
@@ -76,8 +60,8 @@ display: flex;
   border-radius: 10px;
   margin: 20px;
   padding: 10px;
-  
 }
+
 h3 {
   font-family: georgia;
   text-align: center;

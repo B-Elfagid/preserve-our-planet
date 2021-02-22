@@ -1,22 +1,22 @@
 class SessionsController < ApplicationController
 
-    # GET: /users/new
-    get "/signup" do
-      erb :"/sessions/signup.html"
-    end
+  # GET: /users/new
+  get "/signup" do
+    erb :"/sessions/signup.html"
+  end
   
-    # POST: /users
-    post "/signup" do
-      user = User.create(params["user"])
-      if user.valid?
-        flash[:success] = "You have sucessfully created your profile"
-        session["user_id"] = user.id
-        redirect '/actions/new'
-      else
-        flash[:error] = user.errors.full_messages.first
-        redirect '/signup'
-      end 
-    end
+  # POST: /users
+  post "/signup" do
+    user = User.create(params["user"])
+    if user.valid?
+      flash[:success] = "You have sucessfully created your profile"
+      session["user_id"] = user.id
+      redirect '/actions/new'
+    else
+      flash[:error] = user.errors.full_messages.first
+      redirect '/signup'
+    end 
+  end
 
   # GET: /sessions
   get "/login" do
@@ -28,8 +28,7 @@ class SessionsController < ApplicationController
   # POST: /sessions
   post "/login" do
     user = User.find_by_email(params["user"]["email"])
-   
-    if user && user.authenticate(params["user"]["password"])
+      if user && user.authenticate(params["user"]["password"])
       session["user_id"] = user.id
       flash[:message] = "Successfully logged-in"
       redirect "/actions"

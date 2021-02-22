@@ -1,16 +1,48 @@
-<h3>Welcome, Thank you for participating to prevent our planet!</h3>
 
+        <div class="profile-content">
+        <h3>Users Profile</h3>
+        <h5>Would you like to Organize a Community Cleanup or perhaps Plant Something? </h5>
+                  <h5>Start Connecting With People & Protect the Environment</h5>
+       
+        <select>
+          <% @users.each do |u| %>
+            
+            <option>
+               <a href="/users/<%= u.id%>"> Username:<%= u.username %> <br> Email:<%= u.email %>
+            </option>
+          <% end %>
+        </select>   
+        <a href="mailto:some@email.com" target="_blank" class="btn btn-primary">Send Email</a>         
+</div>
+
+<style>
+
+.profile-content {
+  background-color: whitesmoke;
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+  height :400px;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  text-align: center;
+  display: block;
+  font-size: 15px;
   
- 
-   <h1>Profile</h1>
-    <ul>
-     <% @users.each do |u| %>
-      <li>
-       <a href="/users/<%= u.id%>"> Username:<%= u.username %> Email:<%= u.email %> </a><br>
-    </li>
-    <% end %>
-    </ul>
-    
+  font-weight: bold;
+}
 
-
+h5 {
+  text-align: center;
   
+}
+
+</style>
+

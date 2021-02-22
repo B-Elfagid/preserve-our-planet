@@ -1,6 +1,4 @@
 
-
-
 <% if flash[:error] %>
 <div class="errors flash fatal">
    <h3 class="error"><%= flash[:error] %>
@@ -8,64 +6,62 @@
    <% end %>
    
 <div class="form-container">
-<h3>Edit Action:</h3>
-<h4>What have you done today to prevent our planet?</h4>
-    <h5>Please fill the form</h5>
+      <h3>Edit Action:</h3>
+      <h4>What have you done today to prevent our planet?</h4>
+      <h5>Please fill the form</h5>
 
-    <form action="/actions/<%= @action.id %>" method="POST" >
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <form action="/actions/<%= @action.id %>" method="POST" >
+          <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <div class="mb-1 row">
+               <div class="col-md-2">
+                  <label for="name">Name</label>
+               </div>
+                 <div class="col-md-2">
+                    <input type="text" name="action[name]" id="name" value="<%= @action.name %>" required><br>
+                 </div>
+            </div>
+
+            <div class="mb-1 row">
+                <div class="col-md-2">
+                   <label for="title">Title</label>
+                </div>
+                   <div class="col-md-2">
+                     <input type="text" name="action[title]" id="title" value="<%= @action.title %>" required><br>
+                </div>
+            </div>
+
+           <div class="mb-1 row">
+                <div class="col-md-2">
+                  <label for="description">Description</label>
+                </div>
+                 <div class="col-md-2">
+                   <input type="text" name="action[description]" id="description" value="<%= @action.description %>" required><br>
+                </div>
+           </div>
    
-    <div class="mb-1 row">
-        <div class="col-md-2">
-            <label for="name">Name</label>
-         </div>
-         <div class="col-md-2">
-            <input type="text" name="action[name]" id="name" value="<%= @action.name %>" required><br>
-         </div>
-    </div>
-
-    <div class="mb-1 row">
-        <div class="col-md-2">
-            <label for="title">Title</label>
-         </div>
-         <div class="col-md-2">
-            <input type="text" name="action[title]" id="title" value="<%= @action.title %>" required><br>
-         </div>
-    </div>
-
-    <div class="mb-1 row">
-        <div class="col-md-2">
-           <label for="description">Description</label>
-         </div>
-         <div class="col-md-2">
-            <input type="text" name="action[description]" id="description" value="<%= @action.description %>" required><br>
-         </div>
-    </div>
-   
-    <div class="mb-1 row">
-         <div class="col-md-2">
-            <label for="fact">Fact</label>
-         </div>
-         <div class="col-md-2">
-            <input type="text" name="action[fact]" id="fact" value="<%= @action.fact %>" required><br>
-         </div>
-    </div>
+           <div class="mb-1 row">
+                <div class="col-md-2">
+                    <label for="fact">Fact</label>
+                </div>
+                    <div class="col-md-2">
+                        <input type="text" name="action[fact]" id="fact" value="<%= @action.fact %>" required><br>
+                    </div>
+           </div>
     
-    <div class="mb-1 row">
-         <div class="col-md-2">
-            <label for="image">Image</label>
-         </div>
-         <div class="col-md-2">
-            <input type="file" name="action[image]" id="image" value="<%= @action.image %>"><br>
-         </div>
-      </div>
+           <div class="mb-1 row">
+                <div class="col-md-2">
+                     <label for="image">Image</label>
+                </div>
+                   <div class="col-md-2">
+                      <input type="file" name="action[image]" id="image" value="<%= @action.image %>"><br>
+                  </div>
+            </div>
   
-    <h3>
-    <input type="submit" class="btn btn-success" value="Update"/ >
-    </h3>
-    </form>
+           <h3>
+              <input type="submit" class="btn btn-success" value="Update"/ >
+           </h3>
+       </form>
     </div>
-
 
     
     <style>
@@ -81,8 +77,8 @@
       margin-left: auto;
       margin-right: auto;
       padding: 50px;
-   
-    }
+   }
+
     h3, h4, h5 {
       text-align: center;
     }
@@ -90,8 +86,7 @@
     input {
       resize: horizontal;
       width: 500px;
-  
-}
+    }
 
     </style>
     

@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>PreserveOurPlanet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,11 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
     <link href="/stylesheets/main.css" rel="stylesheet" />
 
-    
     <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 
       <meta charset="utf-8" />
@@ -27,36 +23,32 @@
         
   <nav class="navbar navbar-inverse" role="navigation">
        <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
 
-        <a class="navbar-brand" href="#"><img src="/images/leaf.png">
-
-
-        </a>
-        
+          <a class="navbar-brand" href="#"><img src="/images/leaf.png"></a>
       </div>
+
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Home </a></li>
-            <li><a href="/about">About</a></li>
-            <% if !logged_in? %>
-            <li><a href="/signup">Signup</a></li>
-            <% end %>
-            <li><a href="/users">Profile</a></li>
-            <li><a href="/actions">Actions</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/logout">Logout</a></li>
-         </ul>
-      </div>  
-    </div>
-  </nav>
-   
+             <ul class="nav navbar-nav navbar-right">
+                 <li><a href="/">Home </a></li>
+                 <li><a href="/about">About</a></li>
+                 <% if !logged_in? %>
+                 <li><a href="/signup">Signup</a></li>
+                 <% end %>
+                 <li><a href="/users">Profile</a></li>
+                 <li><a href="/actions">Actions</a></li>
+                 <li><a href="/news">News</a></li>
+                 <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>  
+      </div>
+    </nav>
   </div>
      
 <style>
