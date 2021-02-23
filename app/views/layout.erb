@@ -44,7 +44,9 @@
                  <li><a href="/users">Profile</a></li>
                  <li><a href="/actions">Actions</a></li>
                  <li><a href="/news">News</a></li>
+                 <% if logged_in? %>
                  <li><a href="/logout">Logout</a></li>
+                 <% end %>
             </ul>
         </div>  
       </div>

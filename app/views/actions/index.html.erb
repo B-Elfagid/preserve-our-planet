@@ -5,8 +5,8 @@
         <ul id="buttons">
             <% @actions.each do |a| %>
                <li>
-                  <a href="/actions/<%= a.id%>">  Name: <%= a.name %> |  Action title: <%= a.title %></a><br>
-                  <% end %>
+                  <a href="/actions/<%= a.id%>">  Name: <%= a.user.username %> |  Action title: <%= a.title %></a><br>
+                  <% end %>   
                </li>
         </ul>
             <br><br>

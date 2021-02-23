@@ -21,8 +21,8 @@ class ActionsController < ApplicationController
   
   # POST: /actions
   post "/actions" do
-    action = Action.create(params["action"])
-    if action.valid?
+    action = current_user.actions.build(params["action"])
+    if action.save
       flash[:success] = "sucessfuly created"
       redirect "/actions"
     else
@@ -43,6 +43,9 @@ class ActionsController < ApplicationController
   patch "/actions/:id" do
     @action = Action.find(params["id"])
     if @action.update(params["action"])
+      uploader = ImageUploader.new
+      uploader.store!(params["action"]["image"])
+
        redirect "/actions/#{@action.id}"
     else
        flash[:error] = action.errors.full_messages.to_sentence
