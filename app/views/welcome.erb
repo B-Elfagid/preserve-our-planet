@@ -8,7 +8,11 @@
   <br><br><br><br><br>
   <h1>PRESERVE OUR PLANET</h1>
   <h4>Take small actions everyday to save our planet</h4>
-  <a href="/login" class="btn btn-info btn-lg">Login</a> 
+    <% if !logged_in? %> 
+    <a href="/login" class="btn btn-info btn-lg">Login</a> 
+    <% else %>
+      <img src="/images/image.png" alt="background image">
+      <% end %>
 </div>
 
 </html>

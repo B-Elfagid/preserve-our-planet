@@ -16,6 +16,8 @@ class UsersController < ApplicationController
  end
 
 
+
+
   # GET: /users/5
   get "/users/:id" do
     @user = User.find(params["id"])

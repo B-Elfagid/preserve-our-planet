@@ -2,13 +2,30 @@
 
   <div class="actions-container">
       <h4>Your Daily Actions</h4>
-        <ul id="buttons">
-            <% @actions.each do |a| %>
-               <li>
-                  <a href="/actions/<%= a.id%>">  Name: <%= a.user.username %> |  Action title: <%= a.title %></a><br>
-                  <% end %>   
-               </li>
+      
+
+        <div>
+        <ul class="list-group">
+        <li class="list-group-item list-group-item-info">Recently Added Actions</li>
+        <% @actions_recently_added.each do |action| %>
+          <li><a href="/actions/<%= action.id%>"><%= current_user.username %> - <%= action.title %></a></li>
+        <% end %>
         </ul>
+        </div>
+        
+    
+        <div>
+        <ul class="list-group">
+        <li class="list-group-item list-group-item-info">All Actions</li>
+        <% @actions.each do |action| %>
+          <li><a href="/actions/<%= action.id%>"><%= action.name %> - <%= action.title %></a></li>
+        <% end %>
+        </ul>
+        </div>
+ 
+      
+   
+   
             <br><br>
             <h3><a href="/actions/new" class="btn btn-primary">Create new action</a> </h3>      
   </div>
