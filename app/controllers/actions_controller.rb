@@ -4,14 +4,12 @@ class ActionsController < ApplicationController
   # GET: /actions
   get "/actions" do
      redirect_if_not_logged_in
-     @actions_recently_added = Action.all.includes(:user).order(:username).first(5)
+     @actions_recently_added = Action.all.last(5)
      @actions = Action.all.order(username: :asc)
-     @user_actions = current_user.actions
-     @action = Action.find_by_id(session[:action_id])
      erb :"/actions/index.html"
   end
 
-  
+ 
   # GET: /actions/new
   get "/actions/new" do
     redirect_if_not_logged_in
@@ -24,18 +22,35 @@ class ActionsController < ApplicationController
     @action = Action.find(params["id"])
     erb :"/actions/show.html"
   end
+
+  get "/actions/:id/associate" do
+    redirect_if_not_logged_in
+    action = Action.find(params["id"])
+    if current_user.actions.include?(action)
+      SavedAction.find_by(user: current_user, action: action).destroy
+     else
+      current_user.actions << action
+     end 
+    
+    redirect "/actions"
+  end
+  
   
   # POST: /actions
-  post "/actions" do
-    action = Action.new(params["action"])
-    if action.save
-      flash[:success] = "sucessfuly created"
-      redirect "/actions"
-    else
-      flash[:error] = action.errors.full_messages.to_sentence
-      redirect "/actions/new"
+  
+    post "/actions" do
+      redirect_if_not_logged_in
+      action = Action.new(params["action"])
+      if action.save
+        current_user.actions << action
+        flash[:success] = "sucessfuly created"
+        redirect "/actions"
+      else
+        flash[:error] = action.errors.full_messages.to_sentence
+        redirect "/actions/new"
+      end
     end 
-  end 
+  
   
   # GET: /actions/5/edit
   get "/actions/:id/edit" do

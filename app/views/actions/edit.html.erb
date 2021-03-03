@@ -10,18 +10,8 @@
       <h4>What have you done today to prevent our planet?</h4>
       <h5>Please fill the form</h5>
 
-        <form action="/actions/<%= @action.id %>" method="POST" enctype="multipart/form-data"
-        >
-          <input id="hidden" type="hidden" name="_method" value="PATCH">
-            <div class="mb-1 row">
-               <div class="col-md-2">
-                  <label for="name">Name</label>
-               </div>
-                 <div class="col-md-2">
-                    <input type="text" name="action[name]" id="name" value="<%= @action.name %>" required><br>
-                 </div>
-            </div>
-
+        <form action="/actions/<%= @action.id %>" method="POST" enctype="multipart/form-data">
+         
             <div class="mb-1 row">
                 <div class="col-md-2">
                    <label for="title">Title</label>
@@ -55,6 +45,7 @@
                 </div>
                    <div class="col-md-2">
                       <input type="file" name="action[image]" id="image" value="<%= @action.image %>"><br>
+
                   </div>
             </div>
   

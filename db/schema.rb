@@ -10,34 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_203846) do
+ActiveRecord::Schema.define(version: 2021_02_27_001042) do
 
   create_table "actions", force: :cascade do |t|
-    t.string "name"
     t.string "title"
     t.text "description"
+    t.string "fact"
     t.string "image"
-    t.text "fact"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_actions_on_user_id"
   end
 
-  create_table "savedactions", force: :cascade do |t|
+  create_table "saved_actions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "action_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["action_id"], name: "index_savedactions_on_action_id"
-    t.index ["user_id"], name: "index_savedactions_on_user_id"
+    t.index ["action_id"], name: "index_saved_actions_on_action_id"
+    t.index ["user_id"], name: "index_saved_actions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.text "seed_phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
