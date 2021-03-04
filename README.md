@@ -1,5 +1,5 @@
 
-**preserve-our-planet**
+**Preserve-Our-Planet**
 
 Preserve Our Planet app is a simple Sinatra CRUD application to track daily actions taken by users to preserve our planet, it is made to spread awareness of climate change.
 The app allows users to sign up, log in, and log out; create, edit and delete their own actions and see all of the other actions created by other users.
