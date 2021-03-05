@@ -11,6 +11,7 @@
       <h5>Please fill the form</h5>
 
         <form action="/actions/<%= @action.id %>" method="POST" enctype="multipart/form-data">
+        <input id="hidden" type="hidden" name="_method" value="patch">  
          
             <div class="mb-1 row">
                 <div class="col-md-2">
