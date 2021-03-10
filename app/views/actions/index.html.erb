@@ -3,7 +3,16 @@
   <div class="actions-container">
       <h4>Your Daily Actions</h4>
 
-         
+      <div>
+        <ul class="list-group">
+        <li class="list-group-item list-group-item-info">Current Users Action</li>
+        <%  @current_user_action.each do |action| %>
+          <li><a href="/actions/<%= action.id%>"><%= action.title %></a> <a href="/actions/<%= action.id%>/associate" class="btn btn-info"><%= action.add_or_remove(current_user) %></a></li>
+        <% end %>
+        </ul>
+        </div>
+        <br>
+
       <div>
       <ul class="list-group">
       <li class="list-group-item list-group-item-info">Recently Added Actions</li>
@@ -13,6 +22,8 @@
       </ul>
       </div>
       <br>
+
+      
 
         <div>
         <ul class="list-group">

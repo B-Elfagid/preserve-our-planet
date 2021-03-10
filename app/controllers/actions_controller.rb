@@ -5,7 +5,8 @@ class ActionsController < ApplicationController
   get "/actions" do
      redirect_if_not_logged_in
      @actions_recently_added = Action.all.last(5)
-     @actions = Action.all.order(username: :asc)
+     @current_user_action = current_user.actions
+     @actions = Action.all.order(title: :asc)
      erb :"/actions/index.html"
   end
 
@@ -55,6 +56,7 @@ class ActionsController < ApplicationController
   # GET: /actions/5/edit
   get "/actions/:id/edit" do
     redirect_if_not_logged_in
+    req_permission
     @action = Action.find(params["id"])
     erb :"actions/edit.html"
   end
@@ -62,6 +64,7 @@ class ActionsController < ApplicationController
   
   # PATCH: /actions/5
   patch "/actions/:id" do
+    req_permission
     @action = Action.find(params["id"])
     if @action.update(params["action"])
       uploader = ImageUploader.new
@@ -77,6 +80,7 @@ class ActionsController < ApplicationController
 # DELETE: /actions/5/delete
   delete "/actions/:id/delete" do
     redirect_if_not_logged_in
+    req_permission
     @action = Action.find(params["id"])
     if @action.destroy
       redirect "/actions"

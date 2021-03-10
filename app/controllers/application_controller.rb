@@ -31,6 +31,12 @@ class ApplicationController < Sinatra::Base
      redirect "/login"
      end 
    end 
+
+   def req_permission
+     if current_user != Action.find(params["id"])
+      redirect '/actions'
+   end 
+  end 
    
 
    def not_the_owner?(obj)
