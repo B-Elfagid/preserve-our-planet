@@ -1,5 +1,12 @@
 
-<body>   
+<body>  
+
+<% if flash[:error] %>
+<div class="errors flash fatal">
+   <h3 class="error"><%= flash[:error] %>
+   </div>
+   <% end %>
+   
 <div class="flex-container">
    <section class="main-content">
        <h3>Daily Action </h3>
