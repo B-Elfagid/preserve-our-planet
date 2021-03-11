@@ -10,7 +10,6 @@ class ActionsController < ApplicationController
      erb :"/actions/index.html"
   end
 
- 
   # GET: /actions/new
   get "/actions/new" do
     redirect_if_not_logged_in
@@ -42,6 +41,7 @@ class ActionsController < ApplicationController
     post "/actions" do
       redirect_if_not_logged_in
       action = Action.new(params["action"])
+      action.creator = current_user
       if action.save
         current_user.actions << action
         flash[:success] = "sucessfuly created"
@@ -56,35 +56,44 @@ class ActionsController < ApplicationController
   # GET: /actions/5/edit
   get "/actions/:id/edit" do
     redirect_if_not_logged_in
-    req_permission
     @action = Action.find(params["id"])
+    if @action.creator == current_user
     erb :"actions/edit.html"
+    else
+      flash[:error] = "Unauthorized user!"
+      redirect "/actions"
   end
+end
 
   
   # PATCH: /actions/5
   patch "/actions/:id" do
-    req_permission
     @action = Action.find(params["id"])
-    if @action.update(params["action"])
-      uploader = ImageUploader.new
-      uploader.store!(params["action"]["image"])
-
-       redirect "/actions/#{@action.id}"
-    else
-       flash[:error] = action.errors.full_messages.to_sentence
-       redirect "/actions/#{@action.id}/edit"
-     end 
+    if @action.creator == current_user
+      if @action.update(params["action"])
+        uploader = ImageUploader.new
+        uploader.store!(params["action"]["image"])
+        redirect "/actions/#{@action.id}"
+      else
+         flash[:error] = action.errors.full_messages.to_sentence
+         redirect "/actions/#{@action.id}/edit"
+       end 
+      else
+        
+        redirect "/actions"
+    end
+    
   end 
 
 # DELETE: /actions/5/delete
   delete "/actions/:id/delete" do
     redirect_if_not_logged_in
-    req_permission
     @action = Action.find(params["id"])
-    if @action.destroy
+    if @action.creator == current_user
+       @action.destroy
       redirect "/actions"
     else
+      flash[:error] = "Unauthorized user!"
       redirect "/actions/#{@action.id}"
     end
   end 

@@ -3,6 +3,7 @@ class Action < ActiveRecord::Base
      mount_uploader :image, ImageUploader
      has_many :saved_actions
      has_many :users, through: :saved_actions
+     belongs_to :creator, class_name: "User"
      validates :title, presence: true
      validates :description, presence: true
      

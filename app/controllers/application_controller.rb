@@ -1,5 +1,6 @@
 require './config/environment'
 
+
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -32,13 +33,7 @@ class ApplicationController < Sinatra::Base
      end 
    end 
 
-   def req_permission
-     if current_user != Action.find(params["id"])
-      redirect '/actions'
-   end 
-  end 
    
-
    def not_the_owner?(obj)
     if current_user != obj.user
       flash[:error] = "You do not have permission to acess the page!"
